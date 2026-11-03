@@ -13,7 +13,8 @@ export function truncate(input, max) {
 
 /** Count whitespace-separated words. */
 export function wordCount(input) {
-  return input.trim().split(/\s+/).length;
+  const text = input.trim();
+  return text === '' ? 0 : text.split(/\s+/).length;
 }
 
 /** Upper-case the first character. */

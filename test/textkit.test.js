@@ -24,3 +24,8 @@ test('parseDuration reads single units', () => {
   assert.equal(parseDuration('5m'), 300_000);
   assert.equal(parseDuration('2h'), 7_200_000);
 });
+
+test('wordCount is 0 for blank input', () => {
+  assert.equal(wordCount(''), 0);
+  assert.equal(wordCount('   '), 0);
+});
