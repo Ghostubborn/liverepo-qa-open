@@ -24,3 +24,8 @@ test('parseDuration reads single units', () => {
   assert.equal(parseDuration('5m'), 300_000);
   assert.equal(parseDuration('2h'), 7_200_000);
 });
+
+test('parseDuration reads combined units', () => {
+  assert.equal(parseDuration('1h30m'), 5_400_000);
+  assert.equal(parseDuration('2m30s'), 150_000);
+});

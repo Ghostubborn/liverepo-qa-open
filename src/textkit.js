@@ -25,7 +25,8 @@ const UNIT_MS = { ms: 1, s: 1000, m: 60_000, h: 3_600_000 };
 
 /** Parse a duration such as "250ms", "30s", "5m" or "2h" into milliseconds. */
 export function parseDuration(input) {
-  const match = /^(\d+)(ms|s|m|h)$/.exec(input.trim());
-  if (!match) throw new Error(`invalid duration: ${input}`);
-  return Number(match[1]) * UNIT_MS[match[2]];
+  const text = input.trim();
+  const parts = [...text.matchAll(/(\d+)(m|ms|s|h)/g)];
+  if (!parts.length || parts.map((p) => p[0]).join('') !== text) throw new Error(`invalid duration: ${input}`);
+  return parts.reduce((sum, p) => sum + Number(p[1]) * UNIT_MS[p[2]], 0);
 }
