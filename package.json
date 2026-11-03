@@ -1,0 +1,14 @@
+{
+  "name": "textkit",
+  "version": "0.1.0",
+  "description": "Tiny string helpers: slugify, truncate, wordCount, capitalize, parseDuration.",
+  "type": "module",
+  "main": "src/textkit.js",
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT"
+}
