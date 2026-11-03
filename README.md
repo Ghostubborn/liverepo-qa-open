@@ -14,6 +14,15 @@ import { slugify, truncate, wordCount, capitalize, parseDuration } from './src/t
 | `capitalize(text)` | Upper-cases the first character |
 | `parseDuration(text)` | `"250ms"`, `"30s"`, `"5m"`, `"2h"` → milliseconds |
 
+## Examples
+
+```js
+slugify('Hello World');        // 'hello-world'
+truncate('Mirasim rocks', 7);  // 'Mirasim…'
+wordCount('one two three');    // 3
+parseDuration('30s');          // 30000
+```
+
 ## Develop
 
 ```sh
